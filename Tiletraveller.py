@@ -14,17 +14,17 @@ FINAL_DESTINATION = (3, 1)
 def main():
     counter = 0
     location = STARTING_LOCATION
-    while location != FINAL_DESTINATION:
-        location, counter = play_one_move(location,counter)
+    while location == FINAL_DESTINATION:
+        play()
         again = input("Play again (y/n): ")
 
+        
+        
 
-    print(f"Victory! Total coins {counter}.")
 
 
 def play_one_move(location: Tuple[int],counter) -> Tuple[int]:
     """Plays one move of the game.
-
     Returns updated location.
     """
 
@@ -115,8 +115,16 @@ def pull_lever(location, counter):
         
     return counter
     
-def play():
-   
+def play(location):
+    counter = 0
+    while location != FINAL_DESTINATION:
+        location, counter = play_one_move(location,counter)
+        valid_directions = find_directions(location)
+        print(valid_directions)
+        play_one_move(location, counter)
+
+
+    print(f"Victory! Total coins {counter}.")
 
     
 

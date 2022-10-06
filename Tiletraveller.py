@@ -7,14 +7,15 @@ EAST = "e"
 SOUTH = "s"
 WEST = "w"
 
+YES = "y"
+NO = "n"
 STARTING_LOCATION = (1, 1)
 FINAL_DESTINATION = (3, 1)
 
 
 def main():
-    counter = 0
-    location = STARTING_LOCATION
-    while location == FINAL_DESTINATION:
+    again = YES
+    while again == YES:
         play()
         again = input("Play again (y/n): ")
 
@@ -118,6 +119,7 @@ def pull_lever(location, counter):
     
 def play(location):
     counter = 0
+    location = STARTING_LOCATION
     while location != FINAL_DESTINATION:
         location, counter = play_one_move(location,counter)
         valid_directions = find_directions(location)

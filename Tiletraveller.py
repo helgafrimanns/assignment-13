@@ -115,14 +115,13 @@ def pull_lever(location, counter):
         
     return counter
     
-def play(location):
+def play():
     counter = 0
     location = STARTING_LOCATION
     while location != FINAL_DESTINATION:
         location, counter = play_one_move(location,counter)
         valid_directions = find_directions(location)
-        print(valid_directions)
-        play_one_move(location, counter)
+        # play_one_move(location, counter)
 
 
     print(f"Victory! Total coins {counter}.")

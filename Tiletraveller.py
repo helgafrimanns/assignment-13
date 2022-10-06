@@ -15,14 +15,13 @@ def main():
     counter = 0
     location = STARTING_LOCATION
     while location != FINAL_DESTINATION:
-        location = play_one_move(location)
-        validdirection,counter = pull_lever(location,counter)
+        location, counter = play_one_move(location,counter)
 
 
-    print(f"Victory! Total coins {counter}")
+    print(f"Victory! Total coins {counter}.")
 
 
-def play_one_move(location: Tuple[int]) -> Tuple[int]:
+def play_one_move(location: Tuple[int],counter) -> Tuple[int]:
     """Plays one move of the game.
 
     Returns updated location.
@@ -33,10 +32,11 @@ def play_one_move(location: Tuple[int]) -> Tuple[int]:
 
     if direction in valid_directions:
         location = move(direction, location)
+        counter = pull_lever(location,counter)
     else:
         print("Not a valid direction!")
 
-    return location
+    return location,counter
 
 
 def find_directions(location: Tuple[int]) -> Tuple[str]:
@@ -106,13 +106,13 @@ def move(direction: str, location: Tuple[int]) -> Tuple[int]:
     return x, y
 
 def pull_lever(location, counter):
-    validdirection = find_directions(location)
-    if location == (1,2) or location == (2,2) or location==(2,3) or location==(3,2):
-        x = input("Pull a lever (y/n):")
+    if location == (1,2) or location == (2,2) or location == (2,3) or location == (3,2) :
+        x = input("Pull a lever (y/n): ")
         if x == "y":
             counter += 1
-            print(f"You received 1 coin, your total is now {counter}")
-    return validdirection, counter
+            print(f"You received 1 coin, your total is now {counter}.")
+        
+    return counter
     
 
 

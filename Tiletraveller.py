@@ -16,6 +16,7 @@ def main():
     location = STARTING_LOCATION
     while location != FINAL_DESTINATION:
         location, counter = play_one_move(location,counter)
+        again = input("Play again (y/n): ")
 
 
     print(f"Victory! Total coins {counter}.")
@@ -114,7 +115,12 @@ def pull_lever(location, counter):
         
     return counter
     
+def play():
+   
 
+    
+
+            
 
 if __name__ == "__main__":
     main()

@@ -26,7 +26,6 @@ def main():
 
 def play_one_move(location: Tuple[int],counter) -> Tuple[int]:
     """Plays one move of the game.
-
     Returns updated location.
     """
 

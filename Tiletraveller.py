@@ -17,8 +17,6 @@ def main():
     while again == YES:
         play()
         again = input("Play again (y/n): ")
-
-        
         
 
 
@@ -120,8 +118,7 @@ def play():
     location = STARTING_LOCATION
     while location != FINAL_DESTINATION:
         location, counter = play_one_move(location,counter)
-        valid_directions = find_directions(location)
-        # play_one_move(location, counter)
+        
 
 
     print(f"Victory! Total coins {counter}.")

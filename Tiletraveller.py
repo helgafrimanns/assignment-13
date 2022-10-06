@@ -19,7 +19,7 @@ def main():
         validdirection,counter = pull_lever(location,counter)
 
 
-    print(f"Victory! Total coins {counter}.")
+    print(f"Victory! Total coins {counter}")
 
 
 def play_one_move(location: Tuple[int]) -> Tuple[int]:

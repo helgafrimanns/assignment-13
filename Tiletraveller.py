@@ -1,6 +1,5 @@
 from typing import Tuple
 
-
 # Constants
 NORTH = "n"
 EAST = "e"
